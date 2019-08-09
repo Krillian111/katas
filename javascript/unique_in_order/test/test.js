@@ -9,6 +9,8 @@ const uniqueInOrder = underTest.uniqueInOrder;
 describe("uniqueInOrder", function(){
     it("provided test", function(){
         chai.expect(uniqueInOrder('AAAABBBCCDAABBB')).to.eql(['A','B','C','D','A','B']);
+        chai.expect(uniqueInOrder('')).to.eql([]);
+        chai.expect(uniqueInOrder([1,1,2,1,4,5])).to.eql([1,2,1,4,5]);
     });
 });
 
