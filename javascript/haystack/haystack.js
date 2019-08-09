@@ -6,7 +6,11 @@ function findNeedle(haystack) {
 const haystack = {
     findNeedle: function(input){
         return findNeedle(input);
-    }
+    },
+
+    isNeedle: function(input){
+        return input === "needle";
+    } 
 }
 
 if (exports)
