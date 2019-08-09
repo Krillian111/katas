@@ -1,9 +1,14 @@
 function findNeedle(haystack) {
-    return "";
+    iterator = haystack.entries();
+    for ([index, value] of iterator){
+        if(haystackExport.isNeedle(value)){
+            return `found the needle at position ${index}`;
+        }
+    }
   }
 
 
-const haystack = {
+const haystackExport = {
     findNeedle: function(input){
         return findNeedle(input);
     },
@@ -15,6 +20,6 @@ const haystack = {
 
 if (exports)
 {
-  module.exports = haystack;
+  module.exports = haystackExport;
 }
 
