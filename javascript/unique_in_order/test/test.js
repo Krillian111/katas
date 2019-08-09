@@ -11,3 +11,21 @@ describe("uniqueInOrder", function(){
         chai.expect(uniqueInOrder('AAAABBBCCDAABBB')).to.eql(['A','B','C','D','A','B']);
     });
 });
+
+describe("equalToPreviousPredicate", function(){
+    it("returns false for first encounter of certain element", function(){
+        const equalToPreviousPredicate = underTest.equalToPreviousPredicate();
+        chai.expect(equalToPreviousPredicate("A")).to.equal(false);
+    });
+    it("returns true for consecutive encounter of certain element", function(){
+        const equalToPreviousPredicate = underTest.equalToPreviousPredicate();
+        equalToPreviousPredicate("A");
+        chai.expect(equalToPreviousPredicate("A")).to.equal(true);
+    })
+    it("resets when encountering a different element", function(){
+        const equalToPreviousPredicate = underTest.equalToPreviousPredicate();
+        equalToPreviousPredicate("A");
+        equalToPreviousPredicate("B");
+        chai.expect(equalToPreviousPredicate("A")).to.equal(false);
+    })
+})

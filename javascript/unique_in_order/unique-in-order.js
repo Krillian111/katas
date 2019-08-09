@@ -5,6 +5,15 @@ var uniqueInOrder=function(iterable){
 
 const toExport = {
     uniqueInOrder: function(iterable){
+    },
+
+    equalToPreviousPredicate: function(){
+        var previous;
+        return function(current){
+            result = previous === current; 
+            previous = current;
+            return result;
+        }
     }
 }
 
