@@ -6,7 +6,13 @@ function squareDigits(num){
 const squareEveryDigit = {
 
     squareDigits: function(integer){
-        // dummy implementation
+        let integerAsString = ""+integer;
+        let individualDigits = integerAsString.split("");
+        let squaredIndividualDigits = individualDigits.map((value, index) => {
+            return value*value;
+        });
+        let squaredDigitsConcatenated = squaredIndividualDigits.join("");
+        return 0+squaredDigitsConcatenated;
     }
 }
 
